@@ -1,0 +1,59 @@
+{% extends 'orders/base.html' %}
+
+{% block title %}
+    Pizza
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Hello, {{ user.first_name }}</h1>
+</div>
+
+<div class="input-group">
+    <select class="custom-select" id="PizzaSelection" aria-label="">
+        {% for pizza in pizzas %}
+            <option value='pizza.id'>{{ pizza.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select" id="PizzaSizeSelection" aria-label="">
+        {% for pizza in pizzas %}
+            <option value='pizza.size'>{{ pizza.size }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select" id="NumberOfToppings" aria-label="">
+        <option value='ToppingSelection0'>0</option>
+        <option value='ToppingSelection1'>1</option>
+        <option value='ToppingSelection2'>2</option>
+        <option value='ToppingSelection3'>3</option>
+        <option value='ToppingSelection4'>Special</option>
+    </select>
+</div>
+<div class="input-group" id='ToppingSelection'>
+    <select class="custom-select topping-select" id="ToppingSelection1" aria-label="">
+        {% for topping in toppings %}
+            <option value='topping.id'>{{ topping.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select topping-select" id="ToppingSelection2" aria-label="">
+        {% for topping in toppings %}
+            <option value='topping.id'>{{ topping.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select topping-select" id="ToppingSelection3" aria-label="">
+        {% for topping in toppings %}
+            <option value='topping.id'>{{ topping.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select topping-select" id="ToppingSelection4" aria-label="">
+        {% for topping in toppings %}
+            <option value='topping.id'>{{ topping.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="custom-select topping-select" id="ToppingSelection5" aria-label="">
+        {% for topping in toppings %}
+            <option value='topping.id'>{{ topping.name }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+{% endblock %}
