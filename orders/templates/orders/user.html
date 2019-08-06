@@ -9,69 +9,353 @@
     <h1>Hello, {{ user.first_name }}</h1>
 </div>
 
-<div class="card-columns">
+<div class="card-deck">
   <div class="card">
-    <img src="https://static01.nyt.com/images/2018/12/05/dining/05kitchenrex1/merlin_147457287_3700e223-72be-4dd8-a70e-275066fd386f-articleLarge.jpg
-" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Pizza</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <button class="btn btn-block btn-success" data-toggle='modal' data-target='#PizzaModal' id='PizzaButton'>Add to Cart</button>
+    <div class='card-header bg-success text-white'>Regular Pizza</div>
+    <img src='http://assets.kraftfoods.com/recipe_images/opendeploy/122046-12a910429e20fa8ff0ce0d1c2d6382bce0213672_642x428.jpg' class="card-img-top" alt="...">
+    <div class="card-body  text-white bg-danger">
+      <div class="input-group">
+        <h5>Choose the type of pizza:</h5>
+        <br>
+        <ul class='list-unstyled'>
+          {% for regularpizza in regularpizzas %}
+            <li><form class='form-group'>
+              <p class="{{ regularpizza.id }}">{{ regularpizza.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#RegularPizzaModal' id="RegularPizzaModalButton{{ regularpizza.id }}">Add to Cart</button></p>
+            <form></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
   <div class="card">
+    <div class='card-header bg-success text-white'>Sicilian Pizza</div>
+    <img src="https://static01.nyt.com/images/2018/12/05/dining/05kitchenrex1/merlin_147457287_3700e223-72be-4dd8-a70e-275066fd386f-articleLarge.jpg" class="card-img-top" alt="...">
+    <div class="card-body text-white bg-danger">
+      <div class="input-group">
+        <h5>Choose the type of pizza:</h5>
+        <br>
+        <ul class='list-unstyled'>
+        {% for sicilianpizza in sicilianpizzas %}
+          <li><form class='form-group'>
+            <p class="{{ sicilianpizza.id }}">{{ sicilianpizza.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#SicilianPizzaModal' id="SicilianPizzaModalButton{{ sicilianpizza.id }}">Add to Cart</button></p>
+          <form></li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+  <div class='card-header bg-success text-white'>Sub</div>
     <img src="https://images.media-allrecipes.com/userphotos/560x315/2601802.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Sub</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <button class="btn btn-block btn-success">Add to Cart</button>
+    <div class="card-body text-white bg-danger">
+      <div class="input-group">
+        <h5>Choose the type of sub:</h5>
+        <br>
+        <ul class='list-unstyled'>
+        {% for sub in subs %}
+          <li><form class='form-group'>
+            <p class="{{ sub.id }}">{{ sub.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#SubModal' id="SubModalButton{{ sub.id }}">Add to Cart</button></p>
+          <form></li>
+        {% endfor %}
+      </div>
     </div>
   </div>
-  
+</div>
+<div class="card-deck">
   <div class="card">
+    <div class='card-header bg-success text-white'>Pasta</div>
     <img src="https://hips.hearstapps.com/delish/assets/17/36/1504715566-delish-fettuccine-alfredo.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Pasta</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <button class="btn btn-block btn-success">Add to Cart</button>
+    <div class="card-body bg-danger text-white">
+      <div class="input-group">
+        <h5>Choose the type of pasta:</h5>
+        <br>
+        <ul class='list-unstyled'>
+          {% for pasta in pastas %}
+            <li><form class='form-group'>
+              <p class="{{ pasta.id }}">{{ pasta.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#PastaModal' id="PastaModalButton{{ pasta.id }}">Add to Cart</button></p>
+            <form></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
   <div class="card">
+    <div class='card-header bg-success text-white'>Salad</div>
     <img src="https://www.thekitchenmagpie.com/wp-content/uploads/images/2019/02/AntipastoSalad.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Salad</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <button class="btn btn-block btn-success">Add to Cart</button>
+    <div class="card-body bg-danger text-white">
+      <div class="input-group">
+        <h5>Choose the type of salad:</h5>
+        <br>
+        <ul class='list-unstyled'>
+          {% for salad in salads %}
+            <li><form class='form-group'>
+              <p class="{{ salad.id }}">{{ salad.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#SalaldModal' id="SaladModalButton{{ salad.id }}">Add to Cart</button></p> 
+            <form></li>
+          {% endfor %}
+      </div>
     </div>
   </div>
   <div class="card">
+    <div class='card-header bg-success text-white'>Platter</div>
     <img src="https://static1.squarespace.com/static/5a4aeeae914e6b62a1e6c7f0/t/5a65fefd53450a624e1b44ef/1516633870542/Lush_Platters_Board.jpg?format=1500w" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Platter</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <button class="btn btn-block btn-success">Add to Cart</button>
+    <div class="card-body bg-danger text-white">
+      <div class="input-group">
+        <h5>Choose the type of pizza:</h5>
+        <br>
+        <ul class='list-unstyled'>
+          {% for platter in platters %}
+            <li><form class='form-group'>
+              <p class="{{ platter.id }}">{{ platter.name }} <button class="btn btn-sm btn-success float-right" data-toggle='modal' data-target='#PlatterModal' id="PlatterModalButton{{ platter.id }}">Add to Cart</button></p>
+            <form></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Pizza Modal -->
-<div class="modal fade" id="PizzaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Pizza</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+<!-- Regular Pizza Modal -->
+{% for regularpizza in regularpizzas %}
+  <div class="modal fade" id="RegularPizzaModal{{ regularpizza.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Regular Pizza</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="input-group">
+                <label>Choose the size of your pizza:</label>
+                <select class="custom-select col-2" id="RegularPizzaSizeSelection">
+                  <option value='S'>S</option>
+                  <option value='L'>L</option>
+                </select>
+              </div>
+              <div>
+                {% if regularpizza.id is 2 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% elif regularpizza.id is 3 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% elif regularpizza.id is 4 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                  {% elif regularpizza.id is 5 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
         </div>
-        <div class="modal-body">
-            Choose your pizza
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Add to Cart</button>
-        </div>
-      </div>
+    </div>
   </div>
-</div>
+{% endfor %}
+
+<!-- Incomplete!! -->
+<!-- Sicilian Pizza Modal -->
+{% for regularpizza in regularpizzas %}
+  <div class="modal fade" id="RegularPizzaModal{{ regularpizza.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Regular Pizza</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="input-group">
+                <label>Choose the size of your pizza:</label>
+                <select class="custom-select col-2" id="RegularPizzaSizeSelection">
+                  <option value='S'>S</option>
+                  <option value='L'>L</option>
+                </select>
+              </div>
+              <div>
+                {% if regularpizza.id is 2 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% elif regularpizza.id is 3 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% elif regularpizza.id is 4 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                  {% elif regularpizza.id is 5 %}
+                  <br>
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
