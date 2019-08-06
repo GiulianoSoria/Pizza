@@ -127,22 +127,36 @@
           <div class="modal-body">
               <div class="input-group">
                 <label>Choose the size of your pizza:</label>
-                <select class="custom-select col-2" id="RegularPizzaSizeSelection">
+                <select class="custom-select col-2" id="RegularPizzaSizeSelection{{ regularpizza.id }}">
                   <option value='S'>S</option>
                   <option value='L'>L</option>
                 </select>
               </div>
               <div>
-                {% if regularpizza.id is 2 %}
+                {% if regularpizza.id is 1 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='RegularPizzaPriceSmall{{ regularpizza.id }}'> ${{ regularpizza.price_small }}</a>
+                      <a class='text-right' id='RegularPizzaPriceLarge{{ regularpizza.id }}'> ${{ regularpizza.price_large }}</a>
+                  </div>
+                {% elif regularpizza.id is 2 %}
                   <br>
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection{{ regularpizza.id }}">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='RegularPizzaPriceSmall{{ regularpizza.id }}'> ${{ regularpizza.price_small }}</a>
+                        <a class='text-right' id='RegularPizzaPriceLarge{{ regularpizza.id }}'> ${{ regularpizza.price_large }}</a>
                     </div>
                   </div>
                 {% elif regularpizza.id is 3 %}
@@ -150,7 +164,7 @@
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="RegularPizzaToppingSelection{{ regularpizza.id }}">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
@@ -162,6 +176,12 @@
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='RegularPizzaPriceSmall{{ regularpizza.id }}'> ${{ regularpizza.price_small }}</a>
+                        <a class='text-right' id='RegularPizzaPriceLarge{{ regularpizza.id }}'> ${{ regularpizza.price_large }}</a>
                     </div>
                   </div>
                 {% elif regularpizza.id is 4 %}
@@ -188,6 +208,12 @@
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='RegularPizzaPriceSmall{{ regularpizza.id }}'> ${{ regularpizza.price_small }}</a>
+                        <a class='text-right' id='RegularPizzaPriceLarge{{ regularpizza.id }}'> ${{ regularpizza.price_large }}</a>
                     </div>
                   </div>
                   {% elif regularpizza.id is 5 %}
@@ -221,6 +247,12 @@
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='RegularPizzaPriceSmall{{ regularpizza.id }}'> ${{ regularpizza.price_small }}</a>
+                        <a class='text-right' id='RegularPizzaPriceLarge{{ regularpizza.id }}'> ${{ regularpizza.price_large }}</a>
                     </div>
                   </div>
                 {% endif %}
