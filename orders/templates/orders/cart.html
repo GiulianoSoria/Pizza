@@ -8,4 +8,79 @@
 
 <h1>Cart</h1>
 
+<div class='container-fluid'>
+    <div>
+        <h1>Hello, {{ user.first_name }}</h1>
+    </div>
+    <form class='form-group'>
+        <div class="input-group">
+            <label>Choose the type of pizza:</label>
+            <select class="custom-select col-6" id="RegularPizzaSelection">
+                {% for regularpizza in regularpizzas %}
+                    <option value="{{ regularpizza.name }}">{{ regularpizza.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div class="input-group">
+            <label>Choose the size of your pizza:</label>
+            <select class="custom-select col-2" id="PizzaSizeSelection">
+                <option value='S'>S</option>
+                <option value='L'>L</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group" id='ToppingSelection'>
+            <label id='ToppingsLabel'>Toppings:</label>
+            <div class='input-group'>
+                <select class="custom-select topping-select col-lg-2 col-md-3 col-sm-4" id="ToppingSelection1">
+                    {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class='input-group'>
+                <select class="custom-select topping-select col-lg-2 col-md-3 col-sm-4" id="ToppingSelection2">
+                    {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class='input-group'>
+                <select class="custom-select topping-select col-lg-2 col-md-3 col-sm-4" id="ToppingSelection3">
+                    {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class='input-group'>
+                <select class="custom-select topping-select col-lg-2 col-md-3 col-sm-4" id="ToppingSelection4">
+                    {% for topping in toppings %}
+                        <option value="{{ topping.id }}">{{ topping.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class='input-group'>
+                <select class="custom-select topping-select col-lg-2 col-md-3 col-sm-4" id="ToppingSelection5">
+                    {% for topping in toppings %}
+                        <option value='topping.id'>{{ topping.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label>Price:</label>
+            {% for regularpizza in regularpizzas %}
+                <label id="Price">{{ regularpizza.price_small }}</label>
+            {% endfor %}
+        </div>
+        <br>
+        <div class='form-group'>
+            <button class='btn btn-secondary'>Continue Shopping</button>
+            <button class='btn btn-success'>Add to Cart</button>
+        </div>
+    </form>
+</div>
+
 {% endblock %}

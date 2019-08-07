@@ -267,14 +267,13 @@
   </div>
 {% endfor %}
 
-<!-- Incomplete!! -->
 <!-- Sicilian Pizza Modal -->
-{% for regularpizza in regularpizzas %}
-  <div class="modal fade" id="RegularPizzaModal{{ regularpizza.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% for sicilianpizza in sicilianpizzas %}
+  <div class="modal fade" id="SicilianPizzaModal{{ sicilianpizza.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title">Regular Pizza</h5>
+              <h5 class="modal-title">Sicilian Pizza</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
@@ -282,100 +281,492 @@
           <div class="modal-body">
               <div class="input-group">
                 <label>Choose the size of your pizza:</label>
-                <select class="custom-select col-2" id="RegularPizzaSizeSelection">
+                <select class="custom-select col-2" id="SicilianPizzaSizeSelection{{ sicilianpizza.id }}">
                   <option value='S'>S</option>
                   <option value='L'>L</option>
                 </select>
               </div>
               <div>
-                {% if regularpizza.id is 2 %}
+                {% if sicilianpizza.id is 1 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SicilianPizzaPriceSmall{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_small }}</a>
+                      <a class='text-right' id='SicilianPizzaPriceLarge{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_large }}</a>
+                  </div>
+                {% elif sicilianpizza.id is 2 %}
                   <br>
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection{{ sicilianpizza.id }}">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='SicilianPizzaPriceSmall{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_small }}</a>
+                        <a class='text-right' id='SicilianPizzaPriceLarge{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_large }}</a>
                     </div>
                   </div>
-                {% elif regularpizza.id is 3 %}
+                {% elif sicilianpizza.id is 3 %}
                   <br>
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection{{ sicilianpizza.id }}">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='SicilianPizzaPriceSmall{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_small }}</a>
+                        <a class='text-right' id='SicilianPizzaPriceLarge{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_large }}</a>
                     </div>
                   </div>
-                {% elif regularpizza.id is 4 %}
+                {% elif sicilianpizza.id is 4 %}
                   <br>
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='SicilianPizzaPriceSmall{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_small }}</a>
+                        <a class='text-right' id='SicilianPizzaPriceLarge{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_large }}</a>
                     </div>
                   </div>
-                  {% elif regularpizza.id is 5 %}
+                  {% elif sicilianpizza.id is 5 %}
                   <br>
                   <div class="input-group">
                     <label>Choose your toppings:</label>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
                     </div>
                     <div>
-                      <select class="custom-select float-right" id="RegularPizzaToppingSelection">
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
                       {% for topping in toppings %}
                         <option value="{{ topping.id }}">{{ topping.name }}</option>
                       {% endfor %}
                       </select>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='SicilianPizzaPriceSmall{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_small }}</a>
+                        <a class='text-right' id='SicilianPizzaPriceLarge{{ sicilianpizza.id }}'> ${{ sicilianpizza.price_large }}</a>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- Incomplete!! -->
+<!-- Sub Modal -->
+{% for sub in subs %}
+  <div class="modal fade" id="SubModal{{ sub.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Sub</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="input-group">
+                <label>Choose the size of your sub:</label>
+                <select class="custom-select col-2" id="SubSizeSelection{{ sub.id }}">
+                  <option value='S'>S</option>
+                  <option value='L'>L</option>
+                </select>
+              </div>
+              <div>
+                {% if sub.id is 1 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 2 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 3 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 4 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 5 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 6 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 7 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 8 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 9 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 10 %}
+                  <div class="input-group">
+                    <label>Choose your toppings:</label>
+                    <div>
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
+                      {% for subtopping in subtoppings %}
+                        <option value="{{ subtopping.id }}">{{ subtopping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
+                      {% for subtopping in subtoppings %}
+                        <option value="{{ subtopping.id }}">{{ subtopping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    <div>
+                      <select class="custom-select float-right" id="SicilianPizzaToppingSelection">
+                      {% for subtopping in subtoppings %}
+                        <option value="{{ subtopping.id }}">{{ subtopping.name }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+                    
+                    <br>
+                    <hr>
+                    <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                    </div>
+                  </div>
+                {% elif sub.id is 11 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 12 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 13 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 14 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% elif sub.id is 15 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='SubPriceSmall{{ sub.id }}'> ${{ sub.price_small }}</a>
+                      <a class='text-right' id='SubPriceLarge{{ sub.id }}'> ${{ sub.price_large }}</a>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- Pasta Modal -->
+{% for pasta in pastas %}
+  <div class="modal fade" id="PastaModal{{ pasta.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Pasta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div>
+                {% if pasta.id is 1 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='PastaPrice{{ pasta.id }}'> ${{ pasta.price }}</a>
+                  </div>
+                {% elif pasta.id is 2 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='PastaPrice{{ pasta.id }}'> ${{ pasta.price }}</a>
+                  </div>
+                {% elif pasta.id is 3 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='PastaPrice{{ pasta.id }}'> ${{ pasta.price }}</a>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- Salad Modal -->
+{% for salad in salads %}
+  <div class="modal fade" id="SaladModal{{ salad.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Salad</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div>
+                {% if salad.id is 1 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='SaladPrice{{ salad.id }}'> ${{ salad.price }}</a>
+                  </div>
+                {% elif salad.id is 2 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='SaladPrice{{ salad.id }}'> ${{ salad.price }}</a>
+                  </div>
+                {% elif salad.id is 3 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='SaladPrice{{ salad.id }}'> ${{ salad.price }}</a>
+                  </div>
+                  {% elif salad.id is 4 %}
+                  <br>
+                  <div class="input-group">
+                    Price: 
+                    <a class='text-right' id='SaladPrice{{ salad.id }}'> ${{ salad.price }}</a>
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-success">Add to Cart</button>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- Platter Modal -->
+{% for platter in platters %}
+  <div class="modal fade" id="PlatterModal{{ platter.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Platter</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="input-group">
+                <label>Choose the size of your platter:</label>
+                <select class="custom-select col-2" id="PlatterSizeSelection{{ platter.id }}">
+                  <option value='S'>S</option>
+                  <option value='L'>L</option>
+                </select>
+              </div>
+              <div>
+                {% if platter.id is 1 %}
+                  <br>
+                  <hr>
+                  <div class="input-group">
+                      Price: 
+                      <a class='text-right' id='PlatterPriceSmall{{ platter.id }}'> ${{ platter.price_small }}</a>
+                      <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
+                  </div>
+                {% elif platter.id is 2 %}
+                  <br>
+                  <div class="input-group">
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='PlatterPriceSmall{{ platter.id }}'> ${{ platter.price_small }}</a>
+                        <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
+                    </div>
+                  </div>
+                {% elif platter.id is 3 %}
+                  <br>
+                  <div class="input-group">
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='PlatterPriceSmall{{ platter.id }}'> ${{ platter.price_small }}</a>
+                        <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
+                    </div>
+                  </div>
+                {% elif platter.id is 4 %}
+                  <br>
+                  <div class="input-group">
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='PlatterPriceSmall{{ sicilianpizza.id }}'> ${{ platter.price_small }}</a>
+                        <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
+                    </div>
+                  </div>
+                  {% elif platter.id is 5 %}
+                  <br>
+                  <div class="input-group">
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='PlatterPriceSmall{{ platter.id }}'> ${{ platter.price_small }}</a>
+                        <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
+                    </div>
+                  </div>
+                  {% elif platter.id is 6 %}
+                  <br>
+                  <div class="input-group">
+                    <hr>
+                    <div class="input-group">
+                        Price: 
+                        <a class='text-right' id='PlatterPriceSmall{{ platter.id }}'> ${{ platter.price_small }}</a>
+                        <a class='text-right' id='PlatterPriceLarge{{ platter.id }}'> ${{ platter.price_large }}</a>
                     </div>
                   </div>
                 {% endif %}
